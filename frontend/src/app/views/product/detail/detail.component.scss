@@ -1,0 +1,123 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.detail {
+  padding-top: 101px;
+  padding-bottom: 110px;
+
+  .container {
+
+    .detail-title {
+      @include head-lora-36;
+      margin-bottom: 33px;
+    }
+
+    .detail-product {
+      margin-top: 30px;
+      margin-bottom: 120px;
+      display: flex;
+      justify-content: space-between;
+
+      .detail-image {
+        width: 528px;
+        height: 528px;
+        border-radius: 10px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .detail-info {
+        width: 602px;
+
+        .detail-info-items {
+          margin-bottom: 51px;
+
+          .detail-info-item {
+            display: flex;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid #E7F1E8;
+
+            &:first-child {
+              padding-top: 0;
+              margin-top: 0;
+              border-top: none;
+            }
+
+            .detail-info-icon {
+              width: 53px;
+              height: 55px;
+            }
+
+            .detail-info-item-text {
+              margin-left: 22px;
+              width: 528px;
+
+              .detail-info-item-title {
+                font-size: 20px;
+                font-weight: 500;
+                color: $green-text-color;
+                margin-bottom: 15px;
+              }
+
+              .detail-info-item-description {
+                line-height: 20.8px;
+              }
+            }
+
+          }
+        }
+
+        .detail-info-param {
+          margin-top: 12px;
+
+          span {
+            font-weight: 500;
+            margin-right: 10px;
+          }
+        }
+
+        .detail-info-params {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .detail-info-params-count {
+            display: flex;
+            align-items: center;
+
+            span {
+              font-weight: 500;
+              margin-right: 12px;
+            }
+          }
+
+          .detail-info-params-price {
+            font-size: 40px;
+            font-weight: 700;
+            color: #313131;
+          }
+
+        }
+
+        .detail-info-actions {
+          display: flex;
+          align-items: center;
+          margin-top: 22px;
+          position: relative;
+
+          .button {
+            width: 292px;
+            min-width: 292px;
+
+            &.button-transparent {
+              width: 307px;
+              min-width: 307px;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

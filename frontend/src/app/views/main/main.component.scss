@@ -1,0 +1,242 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/fonts";
+@import "../../../assets/styles/mixins";
+
+.main {
+  background: url("../../../assets/images/bg-main.png") no-repeat;
+  background-position-x: calc(50% + 210px);
+  padding-top: 58px;
+  padding-bottom: 231px;
+
+  .container {
+    .main-title {
+      font-family: 'Lora', sans-serif;
+      font-size: 60px;
+      font-weight: 400;
+      line-height: 78px;
+      text-align: left;
+      color: $grass-green-color;
+      margin-bottom: 67px;
+    }
+
+    .main-text {
+      font-size: 18px;
+      line-height: 25.2px;
+      text-align: left;
+      color: $green-text-color;
+      max-width: 528px;
+    }
+  }
+}
+
+.offers {
+  background-color: #A4CBA3;
+  padding: 80px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .offer {
+      width: 600px;
+      height: 250px;
+      padding: 35px 35px 0 35px;
+      background: #FFFFFF;
+      border-radius: 5px;
+      box-sizing: border-box;
+
+      .offer-title {
+        font-size: 20px;
+        line-height: 130%;
+        color: $green-text-color;
+      }
+
+      .offer-content {
+        display: flex;
+
+        .offer-text {
+          line-height: 20.8px;
+          color: $green-text-color;
+        }
+      }
+
+      &.offer-1 {
+        .offer-image {
+          margin-top: 35px;
+        }
+
+        .offer-text {
+          margin-top: 16px;
+          max-width: 234px;
+          margin-left: 58px;
+        }
+
+        .offer-button {
+          margin-left: 168px;
+          margin-top: 22px;
+
+          .button {
+            max-width: 228px;
+          }
+        }
+      }
+
+      &.offer-2 {
+        .offer-title {
+          max-width: 362px;
+        }
+
+        .offer-image {
+          margin-top: 12px;
+          margin-left: 81px;
+        }
+
+        .offer-button {
+          margin-left: 44px;
+          margin-top: 75px;
+
+          .button {
+            width: 177px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.best-products {
+  padding-top: 120px;
+  padding-bottom: 130px;
+}
+
+.info {
+  background-color: #A4CBA3;
+  background-repeat: no-repeat;
+  background-image: url("../../../assets/images/bg-info.png");
+  background-position-x: calc(50% + 340px);
+  padding: 80px 0;
+
+  .container {
+
+    .info-title {
+      @include head-lora-32;
+      margin-bottom: 5px;
+    }
+
+    .info-item {
+      margin-top: 35px;
+      color: #000000;
+      max-width: 442px;
+
+      .info-image {
+        margin-bottom: 30px;
+      }
+
+      .info-text {
+        .info-text-extra {
+          font-family: Montserrat-Italic, sans-serif;
+          font-weight: 300;
+          line-height: 20.8px;
+          margin-top: 8px;
+        }
+      }
+
+      &.info-delivery {
+        .info-text:last-child {
+          margin-top: 16px;
+        }
+      }
+
+      &.info-payment {
+        .info-text:last-child {
+          margin-bottom: 10px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+
+.reviews {
+  margin-top: 130px;
+  margin-bottom: 130px;
+
+  .container {
+
+    .reviews-title {
+      @include head-lora-32;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .reviews-carousel {
+      position: relative;
+
+      .reviews-item {
+        width: 396px;
+        height: 267px;
+        padding: 30px;
+        border: 2px solid #2A592E;
+        border-radius: 10px;
+        box-sizing: border-box;
+
+        .user {
+          display: flex;
+          align-items: center;
+          margin-bottom: 15px;
+
+          .image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-position: center;
+            background-size: cover;
+            margin-right: 26px;
+          }
+
+          .name {
+            font-weight: 600;
+            line-height: 20.8px;
+            color: $green-text-color;
+          }
+        }
+
+        .user-review {
+          line-height: 22.4px;
+        }
+      }
+
+      .carousel-arrows {
+        display: flex;
+
+        a {
+          top: calc(50% - 5px);
+          display: flex;
+          position: absolute;
+          cursor: pointer;
+
+          &.move-backward {
+            left: -41px;
+          }
+
+          &.move-forward {
+            right: -41px;
+          }
+        }
+      }
+
+    }
+
+  }
+}
+
+.map iframe{
+  vertical-align: bottom;
+}

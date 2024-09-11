@@ -1,0 +1,105 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/personal";
+@import "../../../../assets/styles/data-form";
+
+.orders {
+  padding-top: 56px;
+  padding-bottom: 156px;
+
+  .container {
+
+    .orders-title {
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .orders-title-extra {
+      margin-bottom: 67px;
+    }
+
+    .orders-empty {
+      margin-top: 20px;
+      margin-bottom: 100px;
+
+      div {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      button {
+        width: 300px;
+      }
+    }
+
+    .order-list {
+      .order-list-item {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        border-bottom: 1px solid #E7F1E8;
+        padding-bottom: 46px;
+        margin-bottom: 47px;
+
+        &:last-child {
+          border-bottom: 0;
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+
+        .order-number {
+          font-size: 20px;
+          text-decoration: underline;
+          color: #111111;
+          width: 297px;
+          margin-right: 20px;
+        }
+
+        .order-product {
+          width: 509px;
+          margin-right: 20px;
+          color: #ADADAD;
+
+          .products-count {
+            margin-bottom: 12px;
+          }
+
+          .product-list {
+            tr {
+              td {
+                width: 211px;
+                line-height: 21px;
+
+                &:first-child {
+                  padding-right: 20px;
+                }
+                span {
+                  margin-right: 6px;
+                }
+              }
+            }
+          }
+        }
+
+        .status {
+          padding: 8px 24px;
+          border: 1px solid #456F49;
+          border-radius: 50px;
+          text-align: center;
+          box-sizing: border-box;
+          color: #456F49;
+        }
+
+        .price {
+          font-size: 22px;
+          font-weight: 600;
+          width: 186px;
+          text-align: right;
+        }
+
+      }
+    }
+
+
+  }
+}

@@ -1,0 +1,94 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/data-form";
+
+.order {
+  padding-top: 86px;
+  padding-bottom: 107px;
+
+  .container {
+    .title {
+      @include head-lora-32;
+    }
+
+    .order-info {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+
+      .order-details {
+        width: 422px;
+
+        .order-details-info {
+          background-color: #E7F1E8;
+          border-radius: 5px;
+          padding: 40px;
+          margin-bottom: 14px;
+
+          .order-details-info-title {
+            font-family: Lora, sans-serif;
+            font-size: 26px;
+            font-weight: 400;
+            color: $green-text-color;
+            margin-bottom: 20px;
+          }
+
+          .order-details-info-item {
+            margin-bottom: 12px;
+
+            span {
+              font-size: 20px;
+              font-weight: 500;
+              margin-left: 12px;
+            }
+
+            &.forth {
+              font-weight: 600;
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        .button {
+          width: 100%;
+        }
+      }
+    }
+
+  }
+}
+
+.order-popup {
+  padding: 100px 70px 220px;
+  position: relative;
+  border-radius: 10px;
+  text-align: center;
+  color: $green-text-color;
+  background-color: #FFFFFF;
+  background-image: url("../../../../assets/images/thanksForOrder.png");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+
+
+  svg {
+    position: absolute;
+    cursor: pointer;
+    top: 30px;
+    right: 30px;
+  }
+
+  .title {
+    @include head-lora-32;
+    margin-bottom: 40px;
+  }
+
+  .text duv {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+}
+

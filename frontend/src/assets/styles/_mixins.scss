@@ -1,0 +1,33 @@
+@import "variables";
+
+@mixin head-lora-32 {
+  font-family: Lora, sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: $green-text-color;
+}
+
+@mixin head-lora-36 {
+  font-family: Lora, sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  color: #000000;
+}
+
+@mixin applied-filter {
+  padding: 8px 14px;
+  border-radius: 50px;
+  border: 1px solid #E7F1E8;
+  color: $gray-text-color;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    margin-left: 8px;
+  }
+}

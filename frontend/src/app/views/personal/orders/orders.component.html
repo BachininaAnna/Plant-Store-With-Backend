@@ -1,0 +1,41 @@
+<div class="orders">
+  <div class="container">
+    <div class="personal-title">Личный кабинет</div>
+    <div class="personal-pages-selector">
+      <div class="personal-page" routerLink="/info">Личные данные</div>
+      <div class="personal-page active">Ваши заказы</div>
+    </div>
+
+    <div *ngIf="orders && orders.length">
+      <div class="orders-title">Ваши заказы</div>
+      <div class="orders-title-extra">Здесь отображается история ваших заказов.</div>
+    </div>
+    <div class="orders-empty" *ngIf="!orders || !orders.length">
+      <div>У вас ещё нет ни одного заказа</div>
+      <button class="button" routerLink="/catalog">Перейти в каталог товаров</button>
+    </div>
+
+    <div class="order-list" *ngIf="orders.length">
+      <div class="order-list-item" *ngFor="let order of orders; let i = index">
+
+        <div class="order-number">Заказ №{{i + 1}}</div>
+        <div class="order-product" *ngIf="order.items && order.items.length">
+          <div class="products-count">Кол-во товаров: {{order.items.length}}</div>
+
+          <table class="product-list">
+            <tr *ngFor="let item of order.items">
+              <td><span>&#183;</span>{{item.name}}</td>
+              <td>{{item.quantity}} шт.</td>
+            </tr>
+          </table>
+        </div>
+        <div class="status" style="border-color: {{order.color}} ; color: {{order.color}}">
+          {{order.statusRus}}
+        </div>
+        <div class="price">{{order.totalAmount}} BYN</div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

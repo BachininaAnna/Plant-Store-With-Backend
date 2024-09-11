@@ -1,0 +1,89 @@
+@import "variables";
+@import "mixins";
+
+.data-form {
+  max-width: 646px;
+
+  .data-form-block {
+    margin-bottom: 30px;
+
+    .data-form-block-label {
+      font-weight: 500;
+      margin-bottom: 20px;
+
+    }
+    .data-form-block-label-additional {
+      margin-bottom: 20px;
+      max-width: 528px;
+      line-height: 130%;
+    }
+
+    .data-form-type {
+      display: flex;
+      align-items: center;
+      max-width: 340px;
+      border: 1px solid #519057;
+      border-radius: 3px;
+      font-size: 18px;
+      box-sizing: border-box;
+      text-align: center;
+
+      .item {
+        cursor: pointer;
+        padding: 13px 35px;
+        background: transparent;
+
+        &.active {
+          background-color: #519057;
+          color: #FFFFFF;
+        }
+
+      }
+    }
+
+    .data-form-inputs {
+      display: grid;
+      gap: 8px;
+
+      &.personal-info {
+        grid-template-columns: repeat(3, 210px);
+      }
+
+      &.address-info {
+        width: 428px;
+
+        div {
+          display: grid;
+          gap: 8px;
+          grid-template-columns: repeat(2, 125px) 162px;
+        }
+      }
+
+    }
+
+    .data-form-radio {
+      .data-form-radio-block {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        label {
+          margin-left: 12px;
+        }
+
+        input:checked {
+          + label {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+  }
+
+
+}

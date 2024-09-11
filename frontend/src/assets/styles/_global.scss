@@ -1,0 +1,277 @@
+@import "variables";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $gray-text-color;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+.input {
+  box-sizing: border-box;
+  padding: 17px 20px 17px 20px;
+  border-radius: 3px;
+  border: 2px solid $grass-green-color;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+}
+
+.small-input {
+  border: 1px solid #6CAC72;
+  width: 40px;
+  height: 28px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2px;
+  box-sizing: border-box;
+
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: $green-text-color;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.button {
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 15px;
+  border: 0;
+  border-radius: 5px;
+  background-color: $btn-green-color;
+  color: #FFFFFF;
+  text-align: center;
+  height: 51px;
+
+  &:disabled {
+    background: gray;
+    cursor: not-allowed;
+  }
+
+  &.button-transparent {
+    background-color: transparent;
+    border: 1px solid #6CAC72;
+    color: $green-text-color;
+  }
+
+  &.button-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      margin-right: 16px;
+    }
+
+  }
+
+  &.button-in-cart span {
+    &:first-child {
+      display: block;
+    }
+
+    &:last-child {
+      display: none;
+    }
+  }
+
+  &:hover {
+    &.button-in-cart span {
+      &:first-child {
+        display: none;
+      }
+
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+}
+
+.button-count {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  border-radius: 50%;
+  background: rgb(243, 89, 89);
+  width: 25px;
+  height: 25px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a.button {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.mat-menu-content:not(:empty) {
+  background: #FFFFFF !important;
+}
+
+button.mat-menu-item {
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+
+  &:hover {
+    background: #b5b4b4 !important;
+  }
+
+  a, span {
+    text-decoration: none;
+    color: $green-text-color;
+  }
+
+}
+
+.carousel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+
+  .carousel-title {
+    @include head-lora-32;
+  }
+
+  .carousel-arrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      cursor: pointer;
+
+      &:first-child {
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
+.detail-info-params {
+  .count-selector {
+    svg {
+      fill: #C8EACB;
+    }
+  }
+}
+
+.product-card-extra {
+  .count-selector {
+    svg {
+      fill: #9AA89B;
+    }
+  }
+}
+
+.cart-info {
+  .count-selector {
+    .small-input {
+      border: 1px solid #6CAC72;
+      color: #6CAC72;
+    }
+
+    svg {
+      fill: #C8EACB;
+    }
+  }
+}
+
+.favorite-products {
+  .count-selector {
+    margin-right: 80px;
+
+    .small-input {
+      border: 1px solid #6CAC72;
+      color: #6CAC72;
+    }
+
+    svg {
+      fill: #9AA89B;
+    }
+  }
+
+  .count-selector-fix {
+    min-width: 97px;
+    margin-right: 80px;
+    background-color: transparent;
+  }
+}
+
+input[type=radio] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #2A592E;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #2A592E;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  min-width: 14px;
+  min-height: 14px;
+  border: 1px solid #519057;
+  border-radius: 3px;
+  display: grid;
+  place-content: center;
+}
+
+
+.mat-dialog-container {
+  padding: 0 !important;
+  border-radius: 10px !important;
+  background: transparent !important;
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: $link-light-green-color;
+}

@@ -1,0 +1,119 @@
+<div class="order">
+  <div class="container">
+    <div class="title">Оформление вашего заказа</div>
+
+    <div class="order-info">
+      <div class="data-form" [formGroup]="orderForm">
+        <div class="data-form-block">
+          <div class="data-form-block-label">Выберите способ доставки</div>
+          <div class="data-form-type">
+            <div class="item" [class.active]="deliveryType === deliveryTypes.delivery"
+                 (click)="toggleDelivery(deliveryTypes.delivery)">Курьером
+            </div>
+            <div class="item" [class.active]="deliveryType === deliveryTypes.self"
+                 (click)="toggleDelivery(deliveryTypes.self)">Самовывоз
+            </div>
+          </div>
+        </div>
+
+        <div class="data-form-block">
+          <div class="data-form-block-label">Заполните личные данные</div>
+          <div class="data-form-inputs personal-info">
+            <input type="text" class="input" formControlName="lastName" placeholder="Фамилия"
+                   [ngStyle]="{'border-color': validField('lastName') ? 'red' : ''}">
+            <input type="text" class="input" formControlName="firstName" placeholder="Имя"
+                   [ngStyle]="{'border-color': validField('firstName') ? 'red' : ''}">
+            <input type="text" class="input" formControlName="fatherName" placeholder="Отчество"
+                   [ngStyle]="{'border-color': validField('fatherName') ? 'red' : ''}">
+            <input type="text" class="input" formControlName="phone" placeholder="Телефон"
+                   [ngStyle]="{'border-color': validField('phone') ? 'red' : ''}">
+            <input type="text" class="input" formControlName="email" placeholder="E-mail"
+                   [ngStyle]="{'border-color': validField('email') ? 'red' : ''}">
+          </div>
+        </div>
+
+        <div class="data-form-block" *ngIf="deliveryType !== deliveryTypes.self">
+          <div class="data-form-block-label">Заполните адрес доставки</div>
+          <div class="data-form-inputs address-info">
+            <input type="text" class="input" formControlName="street" placeholder="Улица"
+                   [ngStyle]="{'border-color': validField('street') ? 'red' : ''}">
+            <div>
+              <input type="text" class="input" formControlName="house" placeholder="№ дома"
+                     [ngStyle]="{'border-color': validField('house') ? 'red' : ''}">
+              <input type="text" class="input" formControlName="entrance" placeholder="Подъезд"
+                     [ngStyle]="{'border-color': validField('entrance') ? 'red' : ''}">
+              <input type="text" class="input" formControlName="apartment" placeholder="№ квартиры"
+                     [ngStyle]="{'border-color': validField('apartment') ? 'red' : ''}">
+            </div>
+          </div>
+        </div>
+
+        <div class="data-form-block">
+          <div class="data-form-block-label">Выберите способ оплаты</div>
+          <div class="data-form-radio">
+            <div class="data-form-radio-block">
+              <input type="radio" formControlName="paymentType" id="card" value="{{paymentTypes.cardOnline}}">
+              <label for="card">Оплата банковской картой в интернет-магазине</label>
+            </div>
+            <div class="data-form-radio-block">
+              <input type="radio" formControlName="paymentType" id="cashless" value="{{paymentTypes.cardToCourier}}">
+              <label for="cashless">Безналичный расчет при получении</label>
+            </div>
+            <div class="data-form-radio-block">
+              <input type="radio" formControlName="paymentType" id="cash" value="{{paymentTypes.cashToCourier}}">
+              <label for="cash">Наличный расчет при получении</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="data-form-block">
+          <div class="data-form-block-label">Комментарий к заказу (необязательно)</div>
+          <div class="data-form-inputs">
+            <textarea cols="30" rows="5" class="input" formControlName="comment">Оставьте свой комментарий...</textarea>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="order-details">
+        <div class="order-details-info">
+          <div class="order-details-info-title">Ваш заказ</div>
+          <div class="order-details-info-item">
+            Товаров:<span>{{totalCount}}</span>
+          </div>
+          <div class="order-details-info-item">
+            Общая стоимость:<span>{{totalAmount}} BYN</span>
+          </div>
+          <div class="order-details-info-item">
+            Стоимость доставки:<span>10 BYN</span>
+          </div>
+          <div class="order-details-info-item forth">
+            Итоговая стоимость:<span>{{totalAmount + 10}} BYN</span>
+          </div>
+        </div>
+        <div class="order-details-actions">
+          <button class="button" (click)="createOrder()">Подтвердить заказ</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<ng-template #popup>
+
+  <div class="order-popup">
+    <div class="title">Благодарим за заказ!</div>
+    <div class="text">
+      <div>Ваш заказ оформлен.</div>
+      <div> Вся информация о заказе была выслана вам на почту.</div>
+      <div>Курьер свяжется с вами за два часа до доставки товара.</div>
+    </div>
+    <svg (click)="closePopup()"
+      width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="1.93562" y1="2.6499" x2="13.9564" y2="14.6707" stroke="#A8ABA7" stroke-linecap="round"/>
+      <line x1="13.9238" y1="2.62971" x2="1.90301" y2="14.6505" stroke="#A8ABA7" stroke-linecap="round"/>
+    </svg>
+  </div>
+</ng-template>

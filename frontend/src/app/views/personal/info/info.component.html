@@ -1,0 +1,86 @@
+<div class="info">
+  <div class="container">
+    <div class="personal-title">Личный кабинет</div>
+    <div class="personal-pages-selector">
+      <div class="personal-page active">Личные данные</div>
+      <div class="personal-page" routerLink="/orders">Ваши заказы</div>
+    </div>
+
+    <div class="data-form" [formGroup]="infoForm">
+      <div class="data-form-block">
+        <div class="data-form-block-label">Личные данные</div>
+        <div class="data-form-block-label-additional">
+          Введённые данные автоматически подставятся при оформлении заказа.
+        </div>
+        <div class="data-form-inputs personal-info">
+          <input type="text" class="input" formControlName="lastName" placeholder="Фамилия"
+                 [ngStyle]="{'border-color': validField('lastName') ? 'red' : ''}">
+          <input type="text" class="input" formControlName="firstName" placeholder="Имя"
+                 [ngStyle]="{'border-color': validField('firstName') ? 'red' : ''}">
+          <input type="text" class="input" formControlName="fatherName" placeholder="Отчество"
+                 [ngStyle]="{'border-color': validField('fatherName') ? 'red' : ''}">
+          <input type="text" class="input" formControlName="phone" placeholder="Телефон"
+                 [ngStyle]="{'border-color': validField('phone') ? 'red' : ''}">
+          <input type="text" class="input" formControlName="email" placeholder="E-mail"
+                 [ngStyle]="{'border-color': validField('email') ? 'red' : ''}">
+        </div>
+      </div>
+
+      <div class="data-form-block">
+        <div class="data-form-block-label">Адрес доставки</div>
+        <div class="data-form-inputs address-info">
+          <input type="text" class="input" formControlName="street" placeholder="Улица"
+                 [ngStyle]="{'border-color': validField('street') ? 'red' : ''}">
+          <div>
+            <input type="text" class="input" formControlName="house" placeholder="№ дома"
+                   [ngStyle]="{'border-color': validField('house') ? 'red' : ''}">
+            <input type="text" class="input" formControlName="entrance" placeholder="Подъезд"
+                   [ngStyle]="{'border-color': validField('entrance') ? 'red' : ''}">
+            <input type="text" class="input" formControlName="apartment" placeholder="№ квартиры"
+                   [ngStyle]="{'border-color': validField('apartment') ? 'red' : ''}">
+          </div>
+        </div>
+      </div>
+
+      <div class="data-form-block">
+        <div class="data-form-block-label">Предпочитаемый способ доставки</div>
+        <div class="data-form-type">
+          <div class="item" [class.active]="deliveryType === deliveryTypes.delivery"
+               (click)="toggleDelivery(deliveryTypes.delivery)">Курьером
+          </div>
+          <div class="item" [class.active]="deliveryType === deliveryTypes.self"
+               (click)="toggleDelivery(deliveryTypes.self)">Самовывоз
+          </div>
+        </div>
+      </div>
+
+      <div class="data-form-block">
+        <div class="data-form-block-label">Предпочитаемый способ оплаты</div>
+        <div class="data-form-radio">
+          <div class="data-form-radio-block">
+            <input type="radio" formControlName="paymentType" id="card" value="{{paymentTypes.cardOnline}}">
+            <label for="card">Оплата банковской картой в интернет-магазине</label>
+          </div>
+          <div class="data-form-radio-block">
+            <input type="radio" formControlName="paymentType" id="cashless" value="{{paymentTypes.cardToCourier}}">
+            <label for="cashless">Безналичный расчет при получении</label>
+          </div>
+          <div class="data-form-radio-block">
+            <input type="radio" formControlName="paymentType" id="cash" value="{{paymentTypes.cashToCourier}}">
+            <label for="cash">Наличный расчет при получении</label>
+          </div>
+        </div>
+      </div>
+
+      <button class="button" [disabled]="!(infoForm.dirty && infoForm.valid)"
+              (click)="updateUserInfo()">Сохранить</button>
+    </div>
+
+
+
+
+  </div>
+
+  <div class="info-image"><img src="assets/images/bg-main.png" alt="flower"></div>
+
+</div>
